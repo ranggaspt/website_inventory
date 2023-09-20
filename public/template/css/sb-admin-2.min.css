@@ -5166,7 +5166,7 @@ input[type=submit].btn-block {
 .card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
-    background-color: #5a5c69;
+    background-color: #272262;
     border-bottom: 1px solid #e3e6f0
 }
 
@@ -10721,6 +10721,10 @@ button.bg-dark:hover {
     color: #fff !important
 }
 
+.text-blue {
+    color: #272262 !important
+}
+
 .text-primary {
     color: #4e73df !important
 }
@@ -11074,6 +11078,11 @@ a:focus {
     background-size: cover
 }
 
+.bg-gradient-orange {
+    background-color: #be4e20;
+    background-size: cover
+}
+
 .bg-gradient-lightorange {
     background-color: #FAB536;
     background-size: cover
@@ -11212,6 +11221,10 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center
+}
+
+.border-left-blue {
+    border-left: .25rem solid #272262 !important
 }
 
 .border-left-primary {

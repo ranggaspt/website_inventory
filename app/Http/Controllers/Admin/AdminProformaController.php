@@ -9,6 +9,7 @@ use App\Models\Proforma;
 use Nette\Utils\DateTime;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\File;
+use DB;
 
 class AdminProformaController extends Controller
 {
@@ -140,5 +141,12 @@ class AdminProformaController extends Controller
 
         $filePath = $file->storeAs($folder, $fileName, 'public');
         return $filePath;
+    }
+
+    public function download($id){
+
+        $files = DB::table('proformas')->where('id', $id)->first();
+        $pathToFile = public_path("storage/{$files->file}");
+        return \Response::download($pathToFile);
     }
 }

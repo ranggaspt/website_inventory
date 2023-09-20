@@ -126,7 +126,8 @@
                                         <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
                                             <label for="file" class=" control-label">Unggah Dokumen</label>
                                             <input id="file" type="file" class="form-control" name="file" 
-                                            value="{{ $data->file }}">{{$data->file}}
+                                            value="{{ $data->file }}">
+                                            <a href="{{url('admin/purchase/download/'.$data->id)}}" >{{$data->file}}</a>
                                             @if ($errors->has('file'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('file') }}</strong>

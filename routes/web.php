@@ -24,12 +24,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', function () {
-    return view('auth.login');
+Route::get('/', function()
+{
+    return Redirect::guest('login');
 });
 
 Auth::routes();
@@ -45,6 +42,13 @@ Route::middleware(['auth','user-access:admin'])->group(function(){
     Route::resource('admin/proforma', AdminProformaController::class)->names('admin.proforma');
     Route::resource('admin/invoice', AdminInvoiceController::class)->names('admin.invoice');
     Route::get('generatepdf', [AdminMemberController::class, 'generatepdf'])->name('admin.member.generatepdf');
+
+    Route::get('admin/supplier/download/{id}',[AdminSupplierController::class, 'download'])->name('admin.supplier.download');
+    Route::get('admin/client/download/{id}',[AdminClientController::class, 'download'])->name('admin.client.download');
+    Route::get('admin/inventory/download/{id}',[AdminInventoryController::class, 'download'])->name('admin.inventory.download');
+    Route::get('admin/purchase/download/{id}',[AdminPurchaseController::class, 'download'])->name('admin.purchase.download');
+    Route::get('admin/proforma/download/{id}',[AdminProformaController::class, 'download'])->name('admin.proforma.download');
+    Route::get('admin/invoice/download/{id}',[AdminInvoiceController::class, 'download'])->name('admin.invoice.download');
 
     Route::get('admin/profile', [AdminProfileController::class,'index'])->name('admin.profile');
     Route::put('admin/profile', [AdminProfileController::class,'update'])->name('admin.profile.update');

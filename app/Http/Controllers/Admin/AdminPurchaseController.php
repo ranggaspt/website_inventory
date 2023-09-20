@@ -10,6 +10,7 @@ use App\Models\Supplier;
 use Nette\Utils\DateTime;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\File;
+use DB;
 
 class AdminPurchaseController extends Controller
 {
@@ -149,5 +150,12 @@ class AdminPurchaseController extends Controller
 
         $filePath = $file->storeAs($folder, $fileName, 'public');
         return $filePath;
+    }
+
+    public function download($id){
+
+        $files = DB::table('purchases')->where('id', $id)->first();
+        $pathToFile = public_path("storage/{$files->file}");
+        return \Response::download($pathToFile);
     }
 }

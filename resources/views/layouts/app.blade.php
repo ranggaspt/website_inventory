@@ -59,8 +59,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ __('Website Inventory') }}
+                
+                <a class="navbar-brand " href="{{ url('/') }}">
+                    {{ __('PT Bandung Zona Teknologi') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

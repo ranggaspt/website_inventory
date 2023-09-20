@@ -31,6 +31,7 @@
                                     <th>Wilayah</th>
                                     <th>Telepon</th>
                                     <th>Keterangan</th>
+                                    <th>File</th>
                                     <th style="width: 10%">Aksi</th>
                                 </tr>
                             </thead>
@@ -43,6 +44,9 @@
                                     <td>{{$supplier->region}}</td>
                                     <td>{{$supplier->phone}}</td>
                                     <td>{{$supplier->information}}</td>
+                                    <td>
+                                        <a href="{{url('admin/supplier/download/'.$supplier->id)}}" class="btn btn-sm btn-danger">Download</a>
+                                    </td>
                                     <td>
                                         <div class="d-flex">
                                             <div class="mr-2">
@@ -64,7 +68,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="7">Data Tidak Ditemukan</td>
+                                    <td colspan="8">Data Tidak Ditemukan</td>
                                 </tr>
                                 @endforelse
                             </tbody>

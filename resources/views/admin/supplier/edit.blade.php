@@ -119,7 +119,8 @@
                                             <label for="file" class=" control-label">Unggah File (.zip)<span
                                                 class="small text-danger">*</label>
                                             <input id="file" type="file" class="form-control" name="file" 
-                                            value="{{ $data->file }}" > {{$data->file}}
+                                            value="{{ $data->file }}" > 
+                                            <a href="{{url('admin/supplier/download/'.$data->id)}}" >{{$data->file}}</a>
                                             @if ($errors->has('file'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('file') }}</strong>

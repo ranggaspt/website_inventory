@@ -1,12 +1,10 @@
-<ul class="navbar-nav bg-gradient-gray sidebar sidebar-dark accordion" id="accordionSidebar">
+
+<ul class="navbar-nav bg-gradient-orange sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-        <!--<div class="sidebar-brand-icon">
-            <i class="fas fa-laugh-wink"></i>
-            <img src="{{asset('images/logo.png')}}" style="height: 40px;" alt="Image">
-        </div> -->
-        <div class="sidebar-brand-text mx-3"></div>
+        
+        <div class="sidebar-brand-text mx-3">Inventory Website</div>
     </a>
 
     <!-- Divider -->
@@ -65,8 +63,8 @@
         {{ Route::current()->getName()=='admin.inventory.create' ? 'active' : '' }}
         {{ Route::current()->getName()=='admin.inventory.edit' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.inventory.index') }}">
-            <i class="fa fa-cubes"></i>
-            <span class="col-md-2">{{ __('Inventory') }}</span>
+            <i class="fa fa-cubes ml-1"></i>
+            <span class="col-md-2 mr-4">{{ __('Inventory') }}</span>
         </a>
     </li>
 
@@ -75,7 +73,7 @@
         {{ Route::current()->getName()=='admin.purchase.create' ? 'active' : '' }}
         {{ Route::current()->getName()=='admin.purchase.edit' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.purchase.index') }}">
-            <i class="fa fa-store"></i>
+            <i class="fa fa-store ml-1"></i>
             <span class="col-md-2">{{ __('Purchase Order') }}</span>
         </a>
     </li>
@@ -85,7 +83,7 @@
         {{ Route::current()->getName()=='admin.proforma.create' ? 'active' : '' }}
         {{ Route::current()->getName()=='admin.proforma.edit' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('admin.proforma.index') }}">
-            <i class="fa fa-file-invoice"></i>
+            <i class="fa fa-file-invoice ml-2"></i>
             <span class="col-md-2">{{ __('Proforma Invoice') }}</span>
         </a>
     </li>

@@ -31,6 +31,7 @@
                                     <th>Judul PO</th>
                                     <th>Total Harga</th>
                                     <th>Keterangan</th>
+                                    <th>File</th>
                                     <th style="width: 10%">Aksi</th>
                                 </tr>
                             </thead>
@@ -43,6 +44,9 @@
                                     <td>{{$purchase->title}}</td>
                                     <td>{{formatRupiah($purchase->total_price, true)}}</td>
                                     <td>{{$purchase->information}}</td>
+                                    <td>
+                                        <a href="{{url('admin/purchase/download/'.$purchase->id)}}" class="btn btn-sm btn-danger">Download</a>
+                                    </td>
                                     <td>
                                         <div class="d-flex">
                                             <div class="mr-2">

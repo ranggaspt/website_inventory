@@ -13,7 +13,6 @@
                 <div class="text-center">
                     <div class="mb-5">
                         <h1 class="display-5">Login</h1>
-                        {{-- <p>Belum memiliki akun? <a class="link" href="{{ route('register') }}">Daftar disini!</a></p> --}}
                     </div>
                 </div>
                 @csrf
@@ -21,7 +20,7 @@
                 <!-- Form -->
               <div class="mb-4">
                 <label class="form-label" for="signinSrEmail">Username</label>
-                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
+                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="Masukan Username Anda" value="{{ old('username') }}" required autofocus>
                         @error('username')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

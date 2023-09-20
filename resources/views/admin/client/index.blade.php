@@ -31,6 +31,7 @@
                                     <th>Wilayah</th>
                                     <th>Telepon</th>
                                     <th>Keterangan</th>
+                                    <th>File</th>
                                     <th style="width: 10%">Aksi</th>
                                 </tr>
                             </thead>
@@ -43,6 +44,9 @@
                                     <td>{{$client->region}}</td>
                                     <td>{{$client->phone}}</td>
                                     <td>{{$client->information}}</td>
+                                    <td>
+                                        <a href="{{url('admin/client/download/'.$client->id)}}" class="btn btn-sm btn-danger">Download</a>
+                                    </td>
                                     <td>
                                         <div class="d-flex">
                                             <div class="mr-2">

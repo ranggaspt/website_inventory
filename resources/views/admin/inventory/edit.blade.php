@@ -119,7 +119,8 @@
                                         <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
                                             <label for="file" class=" control-label">Unggah File (.zip)<span
                                                 class="small text-danger">*</label>
-                                            <input id="file" type="file" class="form-control preview-image" name="file" value="{{ $data->file }}" > {{$data->file}}
+                                            <input id="file" type="file" class="form-control preview-image" name="file" value="{{ $data->file }}" >
+                                            <a href="{{url('admin/inventory/download/'.$data->id)}}" >{{$data->file}}</a>
                                             
                                             @if ($errors->has('file'))
                                             <span class="help-block">

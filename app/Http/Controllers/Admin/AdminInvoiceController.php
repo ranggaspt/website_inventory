@@ -13,6 +13,7 @@ use App\Models\Client;
 use Nette\Utils\DateTime;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\File;
+use DB;
 
 class AdminInvoiceController extends Controller
 {
@@ -152,5 +153,12 @@ class AdminInvoiceController extends Controller
 
         $filePath = $file->storeAs($folder, $fileName, 'public');
         return $filePath;
+    }
+
+    public function download($id){
+
+        $files = DB::table('invoices')->where('id', $id)->first();
+        $pathToFile = public_path("storage/{$files->file}");
+        return \Response::download($pathToFile);
     }
 }

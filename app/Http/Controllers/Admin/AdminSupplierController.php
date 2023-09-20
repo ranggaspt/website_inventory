@@ -9,6 +9,7 @@ use App\Models\Supplier;
 use Nette\Utils\DateTime;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\File;
+use DB;
 
 class AdminSupplierController extends Controller
 {
@@ -133,5 +134,12 @@ class AdminSupplierController extends Controller
 
         $filePath = $file->storeAs($folder, $fileName, 'public');
         return $filePath;
+    }
+
+    public function download($id){
+        // return dd('ok');
+        $files = DB::table('suppliers')->where('id', $id)->first();
+        $pathToFile = public_path("storage/{$files->file}");
+        return \Response::download($pathToFile);
     }
 }

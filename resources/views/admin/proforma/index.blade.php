@@ -31,6 +31,7 @@
                                     <th>Judul PI</th>
                                     <th>Total Harga</th>
                                     <th>Keterangan</th>
+                                    <th>File</th>
                                     <th style="width: 10%">Aksi</th>
                                 </tr>
                             </thead>
@@ -43,6 +44,9 @@
                                     <td>{{$proforma->title}}</td>
                                     <td>{{formatRupiah($proforma->total_price, true)}}</td>
                                     <td>{{$proforma->information}}</td>
+                                    <td>
+                                        <a href="{{url('admin/proforma/download/'.$proforma->id)}}" class="btn btn-sm btn-danger">Download</a>
+                                    </td>
                                     <td>
                                         <div class="d-flex">
                                             <div class="mr-2">

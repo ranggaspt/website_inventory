@@ -22,8 +22,12 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mb-4 ">
                 <div class="container">
-                    <a class="navbar-brand ml-3" href="{{ url('/') }}">
-                        {{ __('Website Inventory') }}
+                    <div class="sidebar-brand-icon ml-2">
+                        {{-- <i class="fas fa-laugh-wink"></i> --}}
+                        <img src="{{asset('images/logo.jpeg')}}" style="height: 40px;" alt="Image">
+                    </div>
+                    <a class="navbar-brand ml-3">
+                        {{ __('PT Bandung Zona Teknologi') }}
                     </a>
                     <button class="navbar-toggler mr-3" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
